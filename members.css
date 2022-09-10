@@ -62,7 +62,12 @@ body {
 
 }
 
-th, td {
+.membs-data:hover {
+    background-color: rgb(82, 82, 151);
+    cursor: pointer;
+}
+
+.membs th, td {
     text-align: left;
     border: 1px dotted black;
     padding: 2%;
