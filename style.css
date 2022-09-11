@@ -8,10 +8,12 @@
 
 .nav-bar{
     display: flex;
+	position: sticky;
+	top: 0;
     justify-content: space-around;
 	flex-wrap: wrap;
     align-items: center;
-    min-height: 5rem;
+    height: clamp(55px, 10vh, 75px);
     font-family: 'Nunito', sans-serif;
     background-color:#d6d6f5;
 }
@@ -63,6 +65,7 @@
 	margin: 5px;
 
 }
+
 /* Mobile Compability */
 
 @media screen and (max-width:768px){
@@ -70,16 +73,26 @@
 		overflow-x: hidden;
 	}
 	.nav-links-container{
+
 		position: absolute;
 		right: 0px;
 		height: 92vh;
 		top: 5rem;
+
+		position: fixed;
+		float: right;
+		right: -30%;
+		top: clamp(55px, 10vh, 75px);
+		height: max(250px, 92vh);
+		/* height: 92vh; */
+		justify-content: space-evenly;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		width: 30%;
 		background-color:#d6d6f5; 
-		transform: translateX(100%);
+		transform: translateX(0%);
 		transition: transform 0.5s ease-in;
 	}
 	.burger{
@@ -90,7 +103,7 @@
 }
 
 .nav-active{
-	transform: translateX(0%);
+	transform: translateX(-100%);
 }
 
 
