@@ -61,6 +61,7 @@
 	height: 3px;
 	border-radius: 25%;
 	margin: 5px;
+
 }
 /* Mobile Compability */
 
@@ -72,7 +73,7 @@
 		position: absolute;
 		right: 0px;
 		height: 92vh;
-		top: 8vh;
+		top: 5rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -91,6 +92,8 @@
 .nav-active{
 	transform: translateX(0%);
 }
+
+
 
 
 
