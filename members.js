@@ -1,5 +1,8 @@
+var selected=-1;
+
+
 async function addMembers() {
-    const membsTable = document.querySelector('.membs-table');
+    const membsTable = document.querySelector('.membs-table-body');
     await fetch("members.json")
     .then(fileData => {
         return fileData.json();
@@ -33,46 +36,62 @@ async function slide() {
     await addMembers();
     const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links-container');
+	const closeCvButton = document.querySelector('.close-cv-button');
 
 	burger.addEventListener('click', () => {
 		// console.log("hi");
 		nav.classList.toggle('nav-active');
 	});
 
+    closeCvButton.addEventListener('click', () => {
+        members[selected].classList.toggle('membs-data-selected');
+        cvViewer.classList.toggle('viewer-selected');
+        closeCvButton.classList.toggle('close-cv-button-active');
+        selected = -1;
+    });
+
     const membsDiv = document.querySelector('.membs');
     const members = document.querySelectorAll('.membs-data');
     const cvViewer = document.getElementById('viewer');
-    var selected=-1;
-    console.log(members)
     members.forEach((member, index) => {
         member.addEventListener('click', ()=> {
             cvSrc = member.getAttribute('cvsrc');
+            
+            if (selected != -1)
+                members[selected].classList.toggle('membs-data-selected');
+            
             if (selected == -1) {
                 cvViewer.setAttribute('src', cvSrc);
     		    cvViewer.classList.toggle('viewer-selected');
+    		    closeCvButton.classList.toggle('close-cv-button-active');
                 selected = index;
             } else if (selected == index) {
                 // cvViewer.setAttribute('src', cvSrc);
     		    cvViewer.classList.toggle('viewer-selected');
+    		    closeCvButton.classList.toggle('close-cv-button-active');
                 selected = -1;
             } else {
                 cvViewer.setAttribute('src', cvSrc);
                 selected = index;
             }
+            
+            if (selected != -1)
+                members[selected].classList.toggle('membs-data-selected');
         });
     });
     cvViewer.addEventListener('transitionend', ()=> {
         if (!cvViewer.classList.contains('viewer-selected')) {
-    		membsDiv.classList.toggle('membs-selected');
-            cvViewer.classList.toggle('viewer-hidden');
+    		membsDiv.classList.remove('membs-selected');
+            cvViewer.classList.add('viewer-hidden');
         }
     });
     cvViewer.addEventListener('transitionstart', ()=> {
         if (cvViewer.classList.contains('viewer-selected')) {
-            cvViewer.classList.toggle('viewer-hidden');
-    		membsDiv.classList.toggle('membs-selected');
+            cvViewer.classList.remove('viewer-hidden');
+    		membsDiv.classList.add('membs-selected');
         }
     });
+
 }
 
 

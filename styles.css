@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Nunito&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+}
 
 .nav-bar{
     display: flex;
@@ -18,6 +25,7 @@
     height: clamp(55px, 10vh, 75px);
     font-family: 'Nunito', sans-serif;
     background-color:#d6d6f5;
+    z-index: 2;
 }
 
 .title{
@@ -53,7 +61,6 @@
 	transition: all 0.3s;
 }
 
-
 .burger{
 	display: none;
 	cursor: pointer;
@@ -65,7 +72,6 @@
 	height: 3px;
 	border-radius: 25%;
 	margin: 5px;
-
 }
 
 /* Mobile Compability */
@@ -108,68 +114,9 @@
 	transform: translateX(-100%);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.project-title{
-    font-size: 60px;
-    margin-left: 15px;
-	font-family: "Nunito";
-}
-
-.description{
-    font-size: 30px;
-    margin-left: 15px;
-}
-
-.button{
-    background-color: rgb(196, 65, 196);
-    color: aliceblue;
-    margin-left: 15px;
-    border: none;
-    text-align: center;
-    border-radius: 5px;
-    width: 80px; 
-    font-weight: bold;
-    height: 40px;   
-}
-
-.membs table,th,td{
-    border:1px solid black;
-    border-collapse: collapse;
-    border-spacing: 30px;
-    margin-left: 25%;
-    margin-top: 150px;
-}
-
-.membs caption{
-    font-size: 40px;
-}
-
-.membs tr:hover {
-    background-color: rgb(82, 82, 151);
-}
-
-.bg {
-    background-image: url("img1.webp");
-    height: 100%;
-    margin: 0;  
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.flexx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 92.5%;
 }

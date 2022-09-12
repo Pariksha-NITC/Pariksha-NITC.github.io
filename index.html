@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
     <title>Pariksha-NITC</title>
 </head>
 
@@ -16,9 +17,9 @@
         </div>
         <div class="nav-links-container">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Resources</a>
+            <a href="resources.html" class="nav-link">Resources</a>
             <a href="members.html" class="nav-link">Members</a>
-            <a href="#" class="nav-link">Contact</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </div>
         <div class="burger">
             <div class="line1"></div>
@@ -27,17 +28,20 @@
         </div>
     </nav>
 
-    <br>
-    <h1 class="project-title">
-        Online Test Application
-    </h1>
-    <br>
-    <p class="description">
-        A generic concurrent web application for teachers to conduct online tests and for students to take the test
-    </p>
-    <br>
-    <button class="button rounded-corners">Learn More</button>
-
+    <div class="home-div">
+        <h1 class="project-title">
+            Online Test Application
+        </h1>
+        <p class="description">
+            A generic concurrent web application for teachers to conduct online tests and for students to take the test
+        </p>
+        <button class="button rounded-corners" id="button">Learn More</button>
+        <script type="text/javascript">
+            document.getElementById('button').onclick = ()=>{
+                location.href = 'about.html';
+            };
+        </script>
+    </div>
     <script src="index.js"></script>
 </body>
 
