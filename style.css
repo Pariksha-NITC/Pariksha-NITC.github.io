@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+
+
 .nav-bar{
     display: flex;
 	position: sticky;
