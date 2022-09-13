@@ -107,12 +107,12 @@ body {
 		display: block;
 	}
 	
+	.nav-active{
+		transform: translateX(-100%);
+	}
 
 }
 
-.nav-active{
-	transform: translateX(-100%);
-}
 
 .flexx {
     display: flex;

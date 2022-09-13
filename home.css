@@ -29,6 +29,7 @@
     width: 15%;
     min-width: 150px; 
     font-weight: bold;
-    height: 10%;   
+    height: 10%;
+    max-height: 8vh;
     cursor: pointer;
 }
