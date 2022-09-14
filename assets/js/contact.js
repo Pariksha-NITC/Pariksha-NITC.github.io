@@ -1,6 +1,6 @@
 async function addMembers() {
     const contactsTable = document.querySelector('.contacts-table-body');
-    await fetch("members.json")
+    await fetch("assets/data/members.json")
     .then(fileData => {
         return fileData.json();
     })
@@ -18,7 +18,7 @@ async function addMembers() {
             email.textContent = member.email;
 
             row.appendChild(name);
-            row.appendChild(phoneNo);
+            // row.appendChild(phoneNo);
             row.appendChild(email);
             
             row.setAttribute('class', 'contacts-data');

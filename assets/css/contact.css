@@ -12,7 +12,7 @@
 
 .contacts-table {
     width: 90%;
-	min-width: 45rem;
+	/* min-width: 45rem; */
     border: 1px solid black;
     margin: 5%;
     border-collapse: collapse;
@@ -23,6 +23,7 @@
 .contacts-table th, td {
     text-align: left;
     border: 1px dotted black;
+	min-width: 20rem;
     padding: 2%;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -37,6 +38,7 @@
 .heading1{
 	top: 0;
     font-size: 60px;
-    margin: 5%;
+    margin-left: 5%;
+	margin-top: 5%;
 	font-family: "Nunito";
 }

@@ -3,7 +3,7 @@ var selected=-1;
 
 async function addMembers() {
     const membsTable = document.querySelector('.membs-table-body');
-    await fetch("members.json")
+    await fetch("assets/data/members.json")
     .then(fileData => {
         return fileData.json();
     })
@@ -22,7 +22,7 @@ async function addMembers() {
 
             row.appendChild(name);
             row.appendChild(rollNo);
-            row.appendChild(email);
+            // row.appendChild(email);
             
             row.setAttribute('class', 'membs-data');
             row.setAttribute('cvsrc', member.cv);
@@ -37,6 +37,7 @@ async function slide() {
     const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links-container');
 	const closeCvButton = document.querySelector('.close-cv-button');
+    const loaderDiv = document.querySelector('.loader-div');
 
 	burger.addEventListener('click', () => {
 		// console.log("hi");
@@ -61,16 +62,19 @@ async function slide() {
                 members[selected].classList.toggle('membs-data-selected');
             
             if (selected == -1) {
-                cvViewer.setAttribute('src', cvSrc);
     		    cvViewer.classList.toggle('viewer-selected');
+                loaderDiv.classList.add('loader-div-visible');
     		    closeCvButton.classList.toggle('close-cv-button-active');
+                cvViewer.setAttribute('src', cvSrc);
                 selected = index;
             } else if (selected == index) {
                 // cvViewer.setAttribute('src', cvSrc);
     		    cvViewer.classList.toggle('viewer-selected');
+                loaderDiv.classList.remove('loader-div-visible');
     		    closeCvButton.classList.toggle('close-cv-button-active');
                 selected = -1;
             } else {
+                loaderDiv.classList.add('loader-div-visible');
                 cvViewer.setAttribute('src', cvSrc);
                 selected = index;
             }
@@ -92,6 +96,9 @@ async function slide() {
         }
     });
 
+    cvViewer.addEventListener('load', ()=> {
+        loaderDiv.classList.remove('loader-div-visible');
+    });
 }
 
 

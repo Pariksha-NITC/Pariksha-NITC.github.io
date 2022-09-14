@@ -19,7 +19,7 @@
 
 .membs-table {
     width: 90%;
-	min-width: 45rem;
+	/* min-width: 45rem; */
     border: 1px solid black;
     margin: 5%;
     border-collapse: collapse;
@@ -88,6 +88,41 @@
 	display: none;;
 }
 
+.loader {
+	display: block;
+	border: 8px solid #ececec;
+	border-top: 8px solid #3333cc;
+	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	animation: spin 1s linear infinite;
+}
+
+
+.loader-div {
+	position: fixed;
+	display: block;
+	transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+	right: -50vw;
+	z-index: 1;
+}
+
+.loader-div-visible {
+	transform: translateX(-73vw);
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
 /* Mobile Compability */
 
 @media screen and (max-width:768px) {
@@ -119,11 +154,25 @@
 		display: none;
 	}
 
+	.loader-div-visible {
+		transform: translateX(-93vw);
+	}
 }
 
 .heading1{
+	display: block;
 	top: 0;
     font-size: 60px;
-    margin: 5%;
+	margin-top: 5%;
+    margin-left: 5%;
 	font-family: "Nunito";
+}
+
+.description{
+
+    font-size: 20px;
+	color: #3333cc5e;
+	display: inline;
+	font-style: italic;
+	margin-left: 8%;
 }

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="members.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/members.css">
     <title>Pariksha NITC Team Members</title>
 </head>
 
@@ -31,9 +31,14 @@
 
     <div class="flexx">
         <div class="membs">
-            <h1 class="heading1">
-                Members
-            </h1>
+            <div>
+                <h1 class="heading1">
+                    Members
+                </h1>
+                <p class="description">
+                    click on a name to view CV
+                </p>
+            </div>
             <div class="membs-table-div">
                 <table class="membs-table">
                     <thead>
@@ -43,7 +48,7 @@
                         <th><div class="membs-table-resizable-header">Email Id</div></th> -->
                             <th>Name</th>
                             <th>Roll Number</th>
-                            <th>Email Id</th>
+                            <!-- <th>Email Id</th> -->
                         </tr>
                     </thead>
                     <tbody class="membs-table-body">
@@ -55,10 +60,10 @@
         </div>
         <!-- <iframe class="viewer" src="https://drive.google.com/file/d/1iA4zEE4MunVZDVXkAWa6Xb4axuALifXU/preview" allow="autoplay"></iframe> -->
         <iframe class="viewer viewer-hidden" id="viewer"></iframe>
-
+        <div class="loader-div"><div class="loader loader-hidden"></div></div>
     </div>
 
-    <script src="members.js"></script>
+    <script src="assets/js/members.js"></script>
 
 </body>
 
